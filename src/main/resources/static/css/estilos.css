@@ -1,0 +1,29 @@
+
+#Header {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.parrafosCentrados{
+    text-align: center;
+}
+
+a:link {
+    background-color: darkolivegreen;
+    color: white;
+}
+
+a:visited{
+    background-color: blueviolet;
+    color: white;
+}
+
+a:hover{
+    background-color: dodgerblue;
+    color: #c02424;
+}
+
+a:active{
+    background-color: #5e7688;
+    color: #299429;
+}
