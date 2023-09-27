@@ -3,9 +3,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-C:\Users\ferna\OneDrive\Escritorio\Apps Web\Tienda\src\main\resources\static.images
-C:\Users\ferna\OneDrive\Escritorio\Apps Web\Tienda\src\main\resources\static.videos
-C:\Users\ferna\OneDrive\Escritorio\Apps Web\Tienda\src\main\resources\static.audios
 
 ### STS ###
 .apt_generated
