@@ -25,7 +25,6 @@ public class ProjectConfig implements WebMvcConfigurer {
         slr.setDefaultLocale(Locale.getDefault());
         slr.setLocaleAttributeName("session.current.locale");
         slr.setTimeZoneAttributeName("session.current.timezone");
-
         return slr;
     }
 
@@ -33,7 +32,7 @@ public class ProjectConfig implements WebMvcConfigurer {
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor(){
         var lci = new LocaleChangeInterceptor();
-        lci.setParamName("Lang");
+        lci.setParamName("lang");
         return lci;
     }
 
@@ -42,7 +41,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         interceptorRegistry.addInterceptor(localeChangeInterceptor());
     }
 
-    //Bean para ppoder acceder a los Messages.properties
+    //Bean para poder acceder a los Messages.properties
     @Bean("messageSource")
     public MessageSource messageSource(){
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
