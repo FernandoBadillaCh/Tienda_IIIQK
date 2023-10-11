@@ -1,0 +1,35 @@
+package com.Tienda.serviceImpl;
+
+
+import com.Tienda.dao.CategoriaDao;
+import com.Tienda.domain.Categoria;
+import com.Tienda.service.CategoriaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+
+
+@Service
+public class CategoriaServiceImpl implements CategoriaService {
+
+
+    @Autowired
+    private CategoriaDao categoriaDao;
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Categoria> getCategorias(boolean activos) {
+        List<Categoria> categorias = categoriaDao.findAll();
+
+        if(activos){
+            categorias.removeIf(categoria -> !categoria.isActivo());
+        }
+        return categorias;
+    }
+
+    @Override
+    public Categoria getCategoria(Categoria categoria) {
+        return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
+    }
+}
